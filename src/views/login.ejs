@@ -1,52 +1,59 @@
 <%- include('includes/head') %>
-<%- include('includes/nav') %>
+  <%- include('includes/nav') %>
 
 
     <div class="container">
       <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8 mt-3">
-          <h1 class="text-center">Agenda</h1>
-          <p class="text-center lead">Seus contatos estão abaixo: </p>
+          <h1 class="text-center">Login</h1>
+          <p class="text-center lead">Faça login ou crie sua conta abaixo: </p>
 
           <div class="row">
-            <div class="col">
-              <div class="alert alert-danger">Um erro qualquer!</div>
+            <div class="col-lg d-flex justify-content-center flex-column align-items-start">
+              <h4>Faça seu cadastro</h4>
+              <p>Se você ainda não tem conta, preencha o formulário abaixo:</p>
+              <form action="/login/register" method="POST">
+                <input type="hidden" name="csrf" value="<%= csrfToken %>">
+                <div class="mb-3">
+                  <label for="email" class="form-label">Seu e-mail</label>
+                  <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3">
+                  <label for="password" class="form-label">Sua Senha:</label>
+                  <input type="password" name="password" class="form-control" id="password"
+                    aria-describedby="emailHelp">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Criar minha conta</button>
+              </form>
+            </div>
+            <div class="col-lg d-flex justify-content-center flex-column align-items-start">
+              <h4>Entrar no Sistema</h4>
+              <p>Se você já tem uma conta, faça login abaixo::</p>
+              <form action="/login/login" method="POST">
+                <input type="hidden" name="csrf" value="<%= csrfToken %>">
+                <div class="mb-3">
+                  <label for="email" class="form-label">Seu e-mail</label>
+                  <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3">
+                  <label for="password" class="form-label">Sua Senha:</label>
+                  <input type="password" name="password" class="form-control" id="password"
+                    aria-describedby="emailHelp">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Criar minha conta</button>
+              </form>
             </div>
           </div>
-          <table class="table mt-3">
-            <thead>
-              <tr>
-                <th class="text-center" scope="col">Nome</th>
-                <th class="text-center" scope="col">Último Nome</th>
-                <th class="text-center" scope="col">CPF</th>
-                <th class="text-center" scope="col">Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="text-center">Luiz</td>
-                <td class="text-center">Gomes</td>
-                <td class="text-center">3049382019</td>
-                <td class="text-center">luisgomesz@gmail.com</td>
-              </tr>
-              <tr>
-                <td class="text-center">Luiz</td>
-                <td class="text-center">Gomes</td>
-                <td class="text-center">3049382019</td>
-                <td class="text-center">luisgomesz@gmail.com</td>
-              </tr>
-              <tr>
-                <td class="text-center">Luiz</td>
-                <td class="text-center">Gomes</td>
-                <td class="text-center">3049382019</td>
-                <td class="text-center">luisgomesz@gmail.com</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
 
-        
-    </div>
 
-<%- include('includes/footer') %>
+      </div>
+
+      <%- include('includes/footer') %>
