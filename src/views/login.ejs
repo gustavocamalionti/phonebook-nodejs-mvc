@@ -14,16 +14,16 @@
               <h4>Faça seu cadastro</h4>
               <p>Se você ainda não tem conta, preencha o formulário abaixo:</p>
               <form action="/login/register" method="POST">
-                <input type="hidden" name="csrf" value="<%= csrfToken %>">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="mb-3">
                   <label for="email" class="form-label">Seu e-mail</label>
-                  <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                  <input type="email" name="email" class="form-control"
                     aria-describedby="emailHelp">
                 </div>
 
                 <div class="mb-3">
                   <label for="password" class="form-label">Sua Senha:</label>
-                  <input type="password" name="password" class="form-control" id="password"
+                  <input type="password" name="password" class="form-control" 
                     aria-describedby="emailHelp">
                 </div>
 
@@ -34,16 +34,16 @@
               <h4>Entrar no Sistema</h4>
               <p>Se você já tem uma conta, faça login abaixo::</p>
               <form action="/login/login" method="POST">
-                <input type="hidden" name="csrf" value="<%= csrfToken %>">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="mb-3">
                   <label for="email" class="form-label">Seu e-mail</label>
-                  <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                  <input type="email" name="email" class="form-control"
                     aria-describedby="emailHelp">
                 </div>
 
                 <div class="mb-3">
                   <label for="password" class="form-label">Sua Senha:</label>
-                  <input type="password" name="password" class="form-control" id="password"
+                  <input type="password" name="password" class="form-control"
                     aria-describedby="emailHelp">
                 </div>
 
