@@ -7,10 +7,13 @@
         <div class="col-lg-2"></div>
         <div class="col-lg-8 mt-3">
           <h1 class="text-center">Agenda</h1>
+         
           <p class="text-center lead">Seus contatos estão abaixo: </p>
 
           <%- include('includes/messages') %>
+          <% if(contatos.length > 0) { %>
           <div class="responsive-table">
+         
             <table class="table mt-3">
               <thead>
                 <tr>
@@ -18,29 +21,26 @@
                   <th class="text-center" scope="col">Último Nome</th>
                   <th class="text-center" scope="col">CPF</th>
                   <th class="text-center" scope="col">Email</th>
+                  <th class="text-center" scope="col"></th>
+                  <th class="text-center" scope="col"></th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="text-center">Luiz</td>
-                  <td class="text-center">Gomes</td>
-                  <td class="text-center">3049382019</td>
-                  <td class="text-center">luisgomesz@gmail.com</td>
-                </tr>
-                <tr>
-                  <td class="text-center">Luiz</td>
-                  <td class="text-center">Gomes</td>
-                  <td class="text-center">3049382019</td>
-                  <td class="text-center">luisgomesz@gmail.com</td>
-                </tr>
-                <tr>
-                  <td class="text-center">Luiz</td>
-                  <td class="text-center">Gomes</td>
-                  <td class="text-center">3049382019</td>
-                  <td class="text-center">luisgomesz@gmail.com</td>
-                </tr>
+                <% contatos.forEach(contato => {  %>
+                  <tr>
+                    <td class="text-center"><%= contato.nome %></td>
+                    <td class="text-center"><%= contato.sobrenome %></td>
+                    <td class="text-center"><%= contato.telefone %></td>
+                    <td class="text-center"><%= contato.email %></td>
+                    <td class="text-center"><a class="text-secondary text-decoration-none" href="/contato/index/<%= contato._id %>">Editar</a></td>
+                    <td class="text-center"><a class="text-danger text-decoration-none" href="/contato/delete/<%= contato._id %>">Excluir</a></td>
+                  </tr>
+               <% }); %>
               </tbody>
             </table>
+            <% } else { %>
+              <p class="text-center lead">Não existem contatos na sua agenda.</p>
+              <% } %>
           </div>
         </div>
 
