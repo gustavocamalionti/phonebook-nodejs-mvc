@@ -1,7 +1,5 @@
 <%- include('includes/head') %>
   <%- include('includes/nav') %>
-
-
     <div class="container">
       <div class="row">
         <div class="col-lg-2"></div>
@@ -13,7 +11,7 @@
             <div class="col-lg d-flex justify-content-center flex-column align-items-start">
               <h4>Faça seu cadastro</h4>
               <p>Se você ainda não tem conta, preencha o formulário abaixo:</p>
-              <form action="/login/register" method="POST">
+              <form action="/login/register" method="POST" class="form-cadastro">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="mb-3">
                   <label for="email" class="form-label">Seu e-mail</label>
@@ -33,7 +31,7 @@
             <div class="col-lg d-flex justify-content-center flex-column align-items-start">
               <h4>Entrar no Sistema</h4>
               <p>Se você já tem uma conta, faça login abaixo::</p>
-              <form action="/login/login" method="POST">
+              <form action="/login/login" method="POST" class="form-login">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="mb-3">
                   <label for="email" class="form-label">Seu e-mail</label>
